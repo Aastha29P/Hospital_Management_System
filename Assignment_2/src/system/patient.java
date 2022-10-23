@@ -9,7 +9,6 @@ package system;
  * @author parth
  */
 public class Patient {
-    
     public int patId;
     public String firstName;
     public String lastName;
