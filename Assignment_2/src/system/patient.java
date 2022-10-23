@@ -8,17 +8,17 @@ package system;
  *
  * @author parth
  */
-public class patient {
+public class Patient {
     
     public int patId;
     public String firstName;
     public String lastName;
     public String patPhone;
-    public int age;
+    public int age; 
     public String gender;
     public String dob;
-    public float height;
-    public float weight;
+    public int height;
+    public int weight;
     public String house;
 
     public int getPatId() {
@@ -77,19 +77,19 @@ public class patient {
         this.dob = dob;
     }
 
-    public float getHeight() {
+    public int getHeight() {
         return height;
     }
 
-    public void setHeight(float height) {
+    public void setHeight(int height) {
         this.height = height;
     }
 
-    public float getWeight() {
+    public int getWeight() {
         return weight;
     }
 
-    public void setWeight(float weight) {
+    public void setWeight(int weight) {
         this.weight = weight;
     }
 
@@ -100,7 +100,6 @@ public class patient {
     public void setHouse(String house) {
         this.house = house;
     }
-    
     
     
 }
