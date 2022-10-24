@@ -8,6 +8,8 @@ import system.Doctor;
 import system.doctorDirectory;
 import system.Patient;
 import system.patientDirectory;
+import system.Hospital;
+import system.hospitalDirectory;
 
 public class MainJFrame extends javax.swing.JFrame {
     
@@ -15,6 +17,8 @@ public class MainJFrame extends javax.swing.JFrame {
     doctorDirectory docHistory;
     Patient patient;
     patientDirectory patientHistory;
+    Hospital hospital;
+    hospitalDirectory hospHistory;
     
     public MainJFrame() {
         initComponents();
@@ -22,6 +26,8 @@ public class MainJFrame extends javax.swing.JFrame {
         docHistory = new doctorDirectory(); 
         patient = new Patient();
         patientHistory = new patientDirectory();
+        hospital = new Hospital();
+        hospHistory = new hospitalDirectory();
     }
 
     /**
@@ -61,6 +67,11 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         btnHospital.setText("Hospital");
+        btnHospital.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHospitalActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout controlPanelLayout = new javax.swing.GroupLayout(controlPanel);
         controlPanel.setLayout(controlPanelLayout);
@@ -141,6 +152,12 @@ public class MainJFrame extends javax.swing.JFrame {
         CreatePatientJPanel createPatientPanel= new CreatePatientJPanel(patientHistory);
         splitPane.setRightComponent(createPatientPanel);
     }//GEN-LAST:event_btnPatientActionPerformed
+
+    private void btnHospitalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHospitalActionPerformed
+        // TODO add your handling code here:
+        CreateHospitalJPanel createHospitalPanel= new CreateHospitalJPanel(hospHistory);
+        splitPane.setRightComponent(createHospitalPanel);
+    }//GEN-LAST:event_btnHospitalActionPerformed
 
     /**
      * @param args the command line arguments

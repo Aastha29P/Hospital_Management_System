@@ -33,8 +33,8 @@ public class doctorDirectory {
     return newDoc;
     }
     
-    /**public void deleteEmployee(Employee e){
-        history.remove(e);
-    }**/
+    public void deleteDoctor(Doctor d){
+        docHistory.remove(d);
+    }
     
 }

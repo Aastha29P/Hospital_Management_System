@@ -19,6 +19,7 @@ public class Patient {
     public int height;
     public int weight;
     public String house;
+    public String pcommunity;
 
     public int getPatId() {
         return patId;
@@ -98,6 +99,14 @@ public class Patient {
 
     public void setHouse(String house) {
         this.house = house;
+    }
+
+    public String getPCommunity() {
+        return pcommunity;
+    }
+
+    public void setPCommunity(String community) {
+        this.pcommunity = community;
     }
     
     

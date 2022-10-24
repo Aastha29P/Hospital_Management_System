@@ -33,4 +33,8 @@ public class patientDirectory {
     return newPat;
     }
     
+    public void deletePatient(Patient p){
+        patientHistory.remove(p);
+    }
+    
 }
