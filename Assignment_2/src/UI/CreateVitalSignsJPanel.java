@@ -4,10 +4,7 @@
  */
 package UI;
 
-/**
- *
- * @author parth
- */
+
 public class CreateVitalSignsJPanel extends javax.swing.JPanel {
 
     /**
@@ -30,11 +27,11 @@ public class CreateVitalSignsJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 763, Short.MAX_VALUE)
+            .addGap(0, 782, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 316, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

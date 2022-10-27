@@ -4,10 +4,7 @@
  */
 package system;
 
-/**
- *
- * @author parth
- */
+
 public class Doctor {
     public int docId;
     public String docName;

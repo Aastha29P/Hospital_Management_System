@@ -6,10 +6,7 @@ package system;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author parth
- */
+
 public class doctorDirectory {
     
     private ArrayList<Doctor> docHistory;

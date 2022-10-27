@@ -4,10 +4,7 @@
  */
 package system;
 
-/**
- *
- * @author parth
- */
+
 public class personDirectory {
     
 }

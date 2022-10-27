@@ -8,10 +8,7 @@ import javax.swing.JOptionPane;
 import system.Doctor;
 import system.doctorDirectory;
 
-/**
- *
- * @author parth
- */
+
 public class CreateDoctorJPanel extends javax.swing.JPanel {
 
     doctorDirectory docHistory;
@@ -260,7 +257,10 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtHospIdActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
+        
+       // ReadDoctor readDoc = new ReadDoctor();
+        ReadDoctor readDoc = new ReadDoctor();
+        readDoc.setVisible(true);
     }//GEN-LAST:event_btnViewActionPerformed
 
 
