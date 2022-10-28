@@ -4,10 +4,11 @@
  */
 package system;
 
-import java.util.Date;
-
-
-public class Encounter {
+/**
+ *
+ * @author parth
+ */
+public class Encounter1 {
     
     public int repId;
     public int patId;

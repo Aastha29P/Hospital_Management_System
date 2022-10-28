@@ -242,13 +242,9 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
 
         JOptionPane.showMessageDialog(this, "New Doctor is added.");
 
-        txtDocId.setText("");
-        txtDocName.setText("");
-        txtDocPhone.setText("");
-        txtDocGen.setText("");
-        txtDocDep.setText("");
-        txtHospId.setText("");
-        txtHospName.setText("");
+          ReadDoctor readDoc = new ReadDoctor();
+        readDoc.setVisible(true);
+
 
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -259,8 +255,8 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         
        // ReadDoctor readDoc = new ReadDoctor();
-        ReadDoctor readDoc = new ReadDoctor();
-        readDoc.setVisible(true);
+//        ReadDoctor readDoc = new ReadDoctor();
+//        readDoc.setVisible(true);
     }//GEN-LAST:event_btnViewActionPerformed
 
 

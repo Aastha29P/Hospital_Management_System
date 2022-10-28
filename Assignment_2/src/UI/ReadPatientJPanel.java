@@ -339,7 +339,7 @@ public class ReadPatientJPanel extends javax.swing.JPanel {
         int selectedRowIndex = PTable.getSelectedRow();
 
         if (selectedRowIndex<0) {
-            JOptionPane.showMessageDialog(this, "Please select a row to delete");
+            JOptionPane.showMessageDialog(this, "Please select a row to view");
             return;
         }
         DefaultTableModel model = (DefaultTableModel) PTable.getModel();
@@ -464,7 +464,7 @@ public class ReadPatientJPanel extends javax.swing.JPanel {
 
             for(Patient e: patientHistory.getPatientHistory()){
 
-                Object[] row = new Object[11];
+                Object[] row = new Object[13];
                 row[0] = e;
                 row[1] = e.getPatId();
                 row[2] = e.getFirstName();
@@ -474,8 +474,8 @@ public class ReadPatientJPanel extends javax.swing.JPanel {
                 row[6] = e.getGender();
                 row[7] = e.getDob();
                 row[8] = e.getHeight();
-                row[9] = e.getWeight();
-                row[9] = e.getHouse();
+                row[10] = e.getWeight();
+                row[11] = e.getHouse();
 
                 model.addRow(row);
             }

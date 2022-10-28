@@ -38,7 +38,7 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
 
         lbTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Patient");
+        lbTitle.setText("Hospital");
 
         lbHosptId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHosptId.setText(" Id");

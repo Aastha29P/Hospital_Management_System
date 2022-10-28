@@ -26,6 +26,8 @@ public class ReadDoctor extends javax.swing.JFrame {
         docHistory = new doctorDirectory(); 
         patientHistory = new patientDirectory();
         hospHistory = new hospitalDirectory();
+        
+        populateTable();
     }
 
     /**
@@ -509,6 +511,22 @@ public class ReadDoctor extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        DefaultTableModel model = (DefaultTableModel) DTable.getModel();
+            model.setRowCount(0);
+
+            for(Doctor d: docHistory.getDocHistory()){
+
+                Object[] row = new Object[8];
+//                row[0] = d;
+                row[0] = d.getDocId();
+                row[1] = d.getDocName();
+                row[2] = d.getDocPhone();
+                row[3] = d.getDocGen();
+                row[4] = d.getDocDep();
+                row[5] = d.getHospId();
+                row[6] = d.getHospName();
+                
+                model.addRow(row);
+            }
     }
 }

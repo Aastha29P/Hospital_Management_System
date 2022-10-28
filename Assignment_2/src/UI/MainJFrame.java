@@ -143,8 +143,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void btnDoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDoctorActionPerformed
         // TODO add your handling code here:
-        CreateDoctorJPanel createDoctorPanel= new CreateDoctorJPanel(docHistory);
-        splitPane.setRightComponent(createDoctorPanel);
+        DoctorUser doctorUserPanel = new DoctorUser();
+        splitPane.setRightComponent(doctorUserPanel);
     }//GEN-LAST:event_btnDoctorActionPerformed
 
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
