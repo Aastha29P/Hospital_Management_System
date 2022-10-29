@@ -21,41 +21,33 @@
               <Component id="lbTitle" pref="567" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnAdd" min="-2" pref="108" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="btnView" min="-2" pref="108" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lbDocDep" min="-2" pref="87" max="-2" attributes="0"/>
-                          <Component id="lbHospName" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="lbDocId" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="lbDocName" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="lbDocGen" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="lbDocPhone" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="lbHospId" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtDocId" pref="156" max="32767" attributes="0"/>
-                          <Component id="txtDocName" max="32767" attributes="0"/>
-                          <Component id="txtDocGen" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtDocPhone" max="32767" attributes="0"/>
-                          <Component id="txtDocDep" alignment="0" max="32767" attributes="0"/>
-                          <Component id="txtHospName" max="32767" attributes="0"/>
-                          <Component id="txtHospId" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="lbDocDep" min="-2" pref="87" max="-2" attributes="0"/>
+                  <Component id="lbHospName" min="-2" pref="102" max="-2" attributes="0"/>
+                  <Component id="lbDocId" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                  <Component id="lbDocName" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                  <Component id="lbDocGen" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                  <Component id="lbDocPhone" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                  <Component id="lbHospId" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="txtDocId" pref="156" max="32767" attributes="0"/>
+                  <Component id="txtDocName" max="32767" attributes="0"/>
+                  <Component id="txtDocGen" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtDocPhone" max="32767" attributes="0"/>
+                  <Component id="txtDocDep" alignment="0" max="32767" attributes="0"/>
+                  <Component id="txtHospName" max="32767" attributes="0"/>
+                  <Component id="txtHospId" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnAdd" min="-2" pref="108" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="160" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,11 +94,9 @@
                   <Component id="lbHospId" min="-2" pref="22" max="-2" attributes="0"/>
                   <Component id="txtHospId" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="btnView" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="66" max="32767" attributes="0"/>
+              <EmptySpace pref="84" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -201,14 +191,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnView">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View Doctor"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
