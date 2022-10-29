@@ -12,7 +12,7 @@ import system.hospitalDirectory;
 public class ReadHospitalJPanel extends javax.swing.JPanel {
 
     hospitalDirectory hospHistory;
-    public ReadHospitalJPanel() {
+    public ReadHospitalJPanel(hospitalDirectory hospHistory) {
         initComponents();
         this.hospHistory = hospHistory;
         populateTable();

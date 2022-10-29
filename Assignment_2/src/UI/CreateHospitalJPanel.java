@@ -34,7 +34,6 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         lbCity = new javax.swing.JLabel();
         txtCity = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
 
         lbTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -77,13 +76,6 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnView.setText("View Hospital");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,7 +87,6 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(108, 108, 108)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnView, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                     .addComponent(lbHosptId, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                     .addComponent(lbHospName, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                     .addComponent(lbComm, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
@@ -135,9 +126,7 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
                     .addComponent(lbCity, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnAdd)
-                .addGap(53, 53, 53)
-                .addComponent(btnView)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -166,11 +155,6 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnAddActionPerformed
 
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnViewActionPerformed
-
     private void txtHospNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHospNameActionPerformed
@@ -186,7 +170,6 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnView;
     private javax.swing.JLabel lbCity;
     private javax.swing.JLabel lbComm;
     private javax.swing.JLabel lbHospName;

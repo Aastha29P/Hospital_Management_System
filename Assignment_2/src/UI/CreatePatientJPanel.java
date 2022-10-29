@@ -11,6 +11,7 @@ import system.patientDirectory;
 public class CreatePatientJPanel extends javax.swing.JPanel {
 
     patientDirectory patientHistory;
+    
     public CreatePatientJPanel(patientDirectory patientHistory) {
         initComponents();
         this.patientHistory = patientHistory;
@@ -47,7 +48,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         lbHouse = new javax.swing.JLabel();
         txtHouse = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
-        btnView = new javax.swing.JButton();
         lbPatCommunity = new javax.swing.JLabel();
         txtPatCommunity = new javax.swing.JTextField();
 
@@ -146,13 +146,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnView.setText("View Patient");
-        btnView.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewActionPerformed(evt);
-            }
-        });
-
         lbPatCommunity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPatCommunity.setText("Community");
 
@@ -176,7 +169,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                     .addComponent(lbHouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbWeight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbHeight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnView, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                     .addComponent(lbPatGen, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                     .addComponent(lbPatId, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                     .addComponent(lbPatFName, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
@@ -257,9 +249,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
                     .addComponent(txtPatCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addComponent(btnAdd)
-                .addGap(3, 3, 3)
-                .addComponent(btnView)
-                .addGap(34, 34, 34))
+                .addGap(60, 60, 60))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -278,10 +268,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private void txtPatPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatPhoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPatPhoneActionPerformed
-
-    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
@@ -353,7 +339,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
-    private javax.swing.JButton btnView;
     private javax.swing.JLabel lbAge;
     private javax.swing.JLabel lbDob;
     private javax.swing.JLabel lbDocTitle;

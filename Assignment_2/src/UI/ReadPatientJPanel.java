@@ -12,10 +12,12 @@ import system.patientDirectory;
 
 public class ReadPatientJPanel extends javax.swing.JPanel {
     
+    Patient patient;
     patientDirectory patientHistory;
     public ReadPatientJPanel(patientDirectory patientHistory) {
         initComponents();
         this.patientHistory= patientHistory;
+        patient = new Patient();
         
         populateTable();
     }

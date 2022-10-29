@@ -21,6 +21,11 @@ public class Patient {
     public int getPatId() {
         return patId;
     }
+    
+    @Override
+    public String toString() {
+            return String.valueOf(patId);
+    }
 
     public void setPatId(int patId) {
         this.patId = patId;

@@ -17,9 +17,9 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
 
     doctorDirectory docHistory;
     Doctor doctor;
-    public ReadDoctorJPanel() {
+    public ReadDoctorJPanel(doctorDirectory docHistory) {
         initComponents();
-        docHistory = new doctorDirectory(); 
+       this.docHistory = docHistory; 
         doctor = new Doctor();
         populateTable();
     }
@@ -171,7 +171,7 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
                                 .addComponent(btnDelete)
                                 .addGap(33, 33, 33)
                                 .addComponent(btnUpdate)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 51, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(172, 172, 172)
@@ -235,7 +235,7 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 254, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -249,15 +249,15 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
         }
 
         DefaultTableModel model = (DefaultTableModel) DTable.getModel();
-        Doctor selectedDoctor = (Doctor)model.getValueAt(selectedRowIndex, 0);
+        Doctor selectedDoctor = (Doctor) model.getValueAt(selectedRowIndex, 0);
 
         txtDocId.setText(String.valueOf(selectedDoctor.getDocId()));
-        txtDocName.setText(selectedDoctor.getDocName());
-        txtDocPhone.setText(selectedDoctor.getDocPhone());
-        txtDocGen.setText(selectedDoctor.getDocGen());
-        txtDocDep.setText(selectedDoctor.getDocDep());
+        txtDocName.setText(String.valueOf(selectedDoctor.getDocName()));
+        txtDocPhone.setText(String.valueOf(selectedDoctor.getDocPhone()));
+        txtDocGen.setText(String.valueOf(selectedDoctor.getDocGen()));
+        txtDocDep.setText(String.valueOf(selectedDoctor.getDocDep()));
         txtHospId.setText(String.valueOf(selectedDoctor.getHospId()));
-        txtHospName.setText(selectedDoctor.getHospName());
+        txtHospName.setText(String.valueOf(selectedDoctor.getHospName()));
     }//GEN-LAST:event_btnViewActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -374,9 +374,9 @@ private void populateTable() {
 
             for(Doctor d: docHistory.getDocHistory()){
 
-                Object[] row = new Object[8];
-//                row[0] = d;
-                row[0] = d.getDocId();
+                Object[] row = new Object[7];
+                row[0] = d;
+                //row[0] = d.getDocId();
                 row[1] = d.getDocName();
                 row[2] = d.getDocPhone();
                 row[3] = d.getDocGen();

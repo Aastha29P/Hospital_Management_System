@@ -18,6 +18,11 @@ public class Doctor {
         return docId;
     }
 
+    @Override
+    public String toString() {
+            return String.valueOf(docId);
+    }
+    
     public void setDocId(int docId) {
         this.docId = docId;
     }

@@ -27,7 +27,6 @@
                   <Component id="lbHouse" max="32767" attributes="0"/>
                   <Component id="lbWeight" alignment="1" max="32767" attributes="0"/>
                   <Component id="lbHeight" alignment="1" max="32767" attributes="0"/>
-                  <Component id="btnView" alignment="1" pref="108" max="32767" attributes="0"/>
                   <Component id="lbPatGen" alignment="0" pref="108" max="32767" attributes="0"/>
                   <Component id="lbPatId" alignment="0" pref="108" max="32767" attributes="0"/>
                   <Component id="lbPatFName" alignment="0" pref="108" max="32767" attributes="0"/>
@@ -125,9 +124,7 @@
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
-              <Component id="btnView" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -255,14 +252,6 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnView">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View Patient"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lbPatCommunity">
