@@ -43,29 +43,41 @@
               <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lbDocGen" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
-                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="lbDocPhone" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="lbHospName" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="lbDocDep" alignment="1" min="-2" pref="87" max="-2" attributes="0"/>
-                          <Component id="lbHospId" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lbHospName" min="-2" pref="102" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="172" pref="172" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="lbDocGen" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                  <Component id="lbDocPhone" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                                      <Component id="lbDocDep" min="-2" pref="87" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Component id="lbDocName" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
+                              <Component id="lbDocId" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lbHospId" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="lbDocName" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
-                  <Component id="lbDocId" alignment="1" min="-2" pref="102" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtDocId" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtDocName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtDocGen" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtDocPhone" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtDocDep" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtHospName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtHospId" alignment="0" min="-2" pref="156" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtDocId" alignment="0" pref="156" max="32767" attributes="0"/>
+                      <Component id="txtDocName" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtDocGen" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtDocPhone" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtDocDep" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtHospName" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="txtHospId" alignment="1" min="-2" pref="156" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
           </Group>
@@ -110,13 +122,13 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtHospName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbHospName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="lbHospId" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="txtHospId" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtHospId" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbHospId" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="lbHospName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="txtHospName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="0" pref="254" max="32767" attributes="0"/>
           </Group>

@@ -362,6 +362,8 @@ public class ReadPatientJPanel extends javax.swing.JPanel {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        boolean isValid = Validation();
+        if (isValid) {
         int selectedRowIndex = PTable.getSelectedRow();
         if (selectedRowIndex < 0) {
             JOptionPane.showMessageDialog(this, "Please select a row to update");
@@ -409,7 +411,7 @@ public class ReadPatientJPanel extends javax.swing.JPanel {
         txtHouse.setText("");
         txtPatCommunity.setText("");
     }//GEN-LAST:event_btnUpdateActionPerformed
-
+}
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = PTable.getSelectedRow();
@@ -482,4 +484,124 @@ public class ReadPatientJPanel extends javax.swing.JPanel {
                 model.addRow(row);
             }
         }
+    private boolean Validation() {
+        try {
+        Integer.parseInt(txtPatId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Id");
+            
+        }
+        
+        if (txtPatFName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient First Name");
+            return false;
+        } else {
+            if (!(txtPatFName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Patient First Name");
+                return false;
+            }
+        }
+        
+        if (txtPatLName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Last Name");
+            return false;
+        } else {
+            if (!(txtPatLName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Patient Last Name");
+                return false;
+            }
+        }
+        
+        if (txtPatPhone.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Phone Number");
+            return false;
+        } else {
+            if (!(txtPatPhone.getText().matches("\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Patient Phone Number(10 digits)");
+                return false;
+            }
+        }
+        
+        try {
+        Integer.parseInt(txtAge.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Age");
+            
+        }
+        
+        if (txtAge.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Age");
+            return false;
+        }
+     
+            
+        if (txtPatGen.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Gender");
+            return false;
+        }
+            else{
+            if(!(txtPatGen.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid gender");
+                return false;
+            }
+        }    
+        
+        if (txtDob.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient DOB");
+            return false;
+        } else {
+            if (!(txtDob.getText().matches("^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Date Format mm/dd/yyyy");
+                return false;
+            }
+        }
+        
+        if (txtHeight.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Height");
+            return false;
+        }
+        
+        try {
+        Integer.parseInt(txtHeight.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Height");
+            
+        }
+        
+        if (txtWeight.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Weight");
+            return false;
+        }
+        
+        try {
+        Integer.parseInt(txtWeight.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Weight");
+            
+        }
+        if (txtHouse.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient House");
+            return false;
+        }
+            else{
+            if(!(txtHouse.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid House");
+                return false;
+            }
+        } 
+        
+        if (txtPatCommunity.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Community");
+            return false;
+        }
+            else{
+            if(!(txtPatCommunity.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid Community");
+                return false;
+            }
+        } 
+        
+       
+        return true;
+    } 
 }

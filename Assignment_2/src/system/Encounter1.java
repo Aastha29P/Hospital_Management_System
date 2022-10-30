@@ -18,9 +18,14 @@ public class Encounter1 {
     public int hospId;
     public String hospName;
     public String date; 
-
+    
     public int getRepId() {
         return repId;
+    }
+    
+    @Override
+    public String toString() {
+            return String.valueOf(repId);
     }
 
     public void setRepId(int repId) {

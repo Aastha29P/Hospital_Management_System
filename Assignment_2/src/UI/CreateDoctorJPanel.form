@@ -22,25 +22,27 @@
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lbHospId" min="-2" pref="102" max="-2" attributes="0"/>
                   <Component id="lbDocDep" min="-2" pref="87" max="-2" attributes="0"/>
-                  <Component id="lbHospName" min="-2" pref="102" max="-2" attributes="0"/>
                   <Component id="lbDocId" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                   <Component id="lbDocName" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                   <Component id="lbDocGen" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
                   <Component id="lbDocPhone" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
-                  <Component id="lbHospId" alignment="0" min="-2" pref="102" max="-2" attributes="0"/>
+                  <Component id="lbHospName" min="-2" pref="102" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtDocId" pref="156" max="32767" attributes="0"/>
-                  <Component id="txtDocName" max="32767" attributes="0"/>
-                  <Component id="txtDocGen" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtDocPhone" max="32767" attributes="0"/>
-                  <Component id="txtDocDep" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtHospName" max="32767" attributes="0"/>
-                  <Component id="txtHospId" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="txtDocId" pref="156" max="32767" attributes="0"/>
+                      <Component id="txtDocName" max="32767" attributes="0"/>
+                      <Component id="txtDocGen" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtDocPhone" max="32767" attributes="0"/>
+                      <Component id="txtDocDep" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtHospId" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="txtHospName" alignment="1" min="-2" pref="156" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -78,21 +80,20 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="lbDocDep" min="-2" pref="22" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbHospName" min="-2" pref="22" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="lbDocDep" min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="txtDocDep" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtHospName" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbHospId" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="txtHospId" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lbHospId" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="txtHospId" min="-2" max="-2" attributes="0"/>
+                  <Component id="lbHospName" min="-2" pref="22" max="-2" attributes="0"/>
+                  <Component id="txtHospName" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Component id="btnAdd" min="-2" max="-2" attributes="0"/>

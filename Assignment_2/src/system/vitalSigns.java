@@ -16,6 +16,11 @@ public class vitalSigns {
     public float getBodyTemp() {
         return bodyTemp;
     }
+    
+    @Override
+    public String toString() {
+            return String.valueOf(bodyTemp);
+    }        
 
     public void setBodyTemp(float bodyTemp) {
         this.bodyTemp = bodyTemp;

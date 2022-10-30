@@ -17,6 +17,7 @@ public class CreatePersonJPanel extends javax.swing.JPanel {
     personDirectory personHistory;
     public CreatePersonJPanel(personDirectory personHistory) {
         initComponents();
+        this.personHistory = personHistory;
     }
 
     /**

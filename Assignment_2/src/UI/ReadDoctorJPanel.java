@@ -174,26 +174,33 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
                         .addGap(0, 51, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbDocGen, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(lbDocPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbDocDep, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lbDocName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbDocId, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(lbDocGen, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbDocPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(lbDocDep, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(lbDocName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lbDocId, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDocId)
-                    .addComponent(txtDocName)
-                    .addComponent(txtDocGen)
-                    .addComponent(txtDocPhone)
-                    .addComponent(txtDocDep)
-                    .addComponent(txtHospName)
-                    .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtDocId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                        .addComponent(txtDocName)
+                        .addComponent(txtDocGen)
+                        .addComponent(txtDocPhone)
+                        .addComponent(txtDocDep)
+                        .addComponent(txtHospName))
+                    .addComponent(txtHospId, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(165, 165, 165))
         );
         layout.setVerticalGroup(
@@ -229,12 +236,12 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
                     .addComponent(lbDocDep, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 254, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -280,6 +287,8 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        boolean isValid = Validation();
+        if (isValid) {
         int selectedRowIndex = DTable.getSelectedRow();
         if (selectedRowIndex < 0) {
             JOptionPane.showMessageDialog(this, "Please select a row to update");
@@ -317,8 +326,7 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
         txtHospName.setText("");
         }
 
-        {
-            // TODO add your handling code here:
+          // TODO add your handling code here:
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void txtHospIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospIdActionPerformed
@@ -374,17 +382,109 @@ private void populateTable() {
 
             for(Doctor d: docHistory.getDocHistory()){
 
-                Object[] row = new Object[7];
+                Object[] row = new Object[9];
                 row[0] = d;
-                //row[0] = d.getDocId();
-                row[1] = d.getDocName();
-                row[2] = d.getDocPhone();
-                row[3] = d.getDocGen();
-                row[4] = d.getDocDep();
-                row[5] = d.getHospId();
-                row[6] = d.getHospName();
+                row[1] = d.getDocId();
+                row[2] = d.getDocName();
+                row[3] = d.getDocPhone();
+                row[4] = d.getDocGen();
+                row[5] = d.getDocDep();
+                row[6] = d.getHospId();
+                row[7] = d.getHospName();
                 
                 model.addRow(row);
             }
+    }
+
+    private boolean Validation() {
+
+        try {
+        Integer.parseInt(txtDocId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Id");
+            
+        }
+        
+        try {
+        Integer.parseInt(txtHospId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Hospital Id");
+            
+        }
+
+
+        if (txtDocId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor ID");
+            return false;
+        } else {
+            if (txtDocId.getText().length() != 3) {
+                JOptionPane.showMessageDialog(this, "Doctor ID should be only 3 digits");
+                return false;
+            }
+        }
+    
+        if (txtDocName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Name");
+            return false;
+        } else {
+            if (!(txtDocName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Doctor Name");
+                return false;
+            }
+        }
+        
+        if (txtDocGen.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Gender");
+            return false;
+        }
+            else{
+            if(!(txtDocGen.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid gender");
+                return false;
+            }
+        }    
+        
+        
+        if (txtDocPhone.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Phone Number");
+            return false;
+        } else {
+            if (!(txtDocPhone.getText().matches("\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Doctor Phone Number(10 digits)");
+                return false;
+            }
+        }
+        
+        if (txtDocDep.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Department");
+            return false;
+        }
+        else{
+            if(!(txtDocDep.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid department");
+                return false;
+            }
+        }    
+        
+        if (txtHospId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital ID");
+            return false;
+        } else {
+            if (txtHospId.getText().length()> 1) {
+                JOptionPane.showMessageDialog(this, "Hospital ID should be only 1 digit");
+                return false;
+            }
+        }
+        
+        if (txtHospName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital Name");
+            return false;
+        } else {
+            if (!(txtHospName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Hospital Name");
+                return false;
+            }
+        }
+        return true;
     }
 }

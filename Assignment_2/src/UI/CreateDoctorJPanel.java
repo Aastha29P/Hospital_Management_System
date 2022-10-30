@@ -120,24 +120,25 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                 .addComponent(lbTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
                 .addGap(33, 33, 33))
             .addGroup(layout.createSequentialGroup()
-                .addGap(114, 114, 114)
+                .addGap(126, 126, 126)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbDocDep, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbDocId, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbDocName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbDocGen, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbDocPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDocId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(txtDocName)
-                    .addComponent(txtDocGen)
-                    .addComponent(txtDocPhone)
-                    .addComponent(txtDocDep)
-                    .addComponent(txtHospName)
-                    .addComponent(txtHospId))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(txtDocId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                        .addComponent(txtDocName)
+                        .addComponent(txtDocGen)
+                        .addComponent(txtDocPhone)
+                        .addComponent(txtDocDep)
+                        .addComponent(txtHospId))
+                    .addComponent(txtHospName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -167,46 +168,27 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                     .addComponent(lbDocPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbDocDep, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbDocDep, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtDocDep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(44, 44, 44)
                 .addComponent(btnAdd)
                 .addContainerGap(84, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtDocNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDocNameActionPerformed
-
-    private void txtDocGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocGenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDocGenActionPerformed
-
-    private void txtDocPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocPhoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDocPhoneActionPerformed
-
-    private void txtDocDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocDepActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDocDepActionPerformed
-
-    private void txtHospNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHospNameActionPerformed
-
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
+        boolean isValid = Validation();
+        if (isValid) {
         int docId = Integer.parseInt(txtDocId.getText());
         String docName = txtDocName.getText();
         String docPhone = txtDocPhone.getText();
@@ -227,12 +209,32 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
 
         JOptionPane.showMessageDialog(this, "New Doctor is added.");
 
-
+        }
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void txtDocPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDocPhoneActionPerformed
+
+    private void txtDocGenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocGenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDocGenActionPerformed
+
+    private void txtDocNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDocNameActionPerformed
 
     private void txtHospIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHospIdActionPerformed
+
+    private void txtHospNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHospNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHospNameActionPerformed
+
+    private void txtDocDepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocDepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDocDepActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -253,4 +255,95 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtHospId;
     private javax.swing.JTextField txtHospName;
     // End of variables declaration//GEN-END:variables
+private boolean Validation() {
+    
+        try {
+        Integer.parseInt(txtDocId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Id");
+            
+        }
+        
+
+        if (txtDocId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor ID");
+            return false;
+        } else {
+            if (txtDocId.getText().length() != 3) {
+                JOptionPane.showMessageDialog(this, "Doctor ID should be only 3 digits");
+                return false;
+            }
+        }
+    
+        if (txtDocName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Name");
+            return false;
+        } else {
+            if (!(txtDocName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Doctor Name");
+                return false;
+            }
+        }
+        
+        if (txtDocGen.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Gender");
+            return false;
+        }
+            else{
+            if(!(txtDocGen.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid gender");
+                return false;
+            }
+        }    
+        
+        
+        if (txtDocPhone.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Phone Number");
+            return false;
+        } else {
+            if (!(txtDocPhone.getText().matches("\\d{10}|(?:\\d{3}-){2}\\d{4}|\\(\\d{3}\\)\\d{3}-?\\d{4}"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Doctor Phone Number(10 digits)");
+                return false;
+            }
+        }
+        
+        if (txtDocDep.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Department");
+            return false;
+        }
+        else{
+            if(!(txtDocDep.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid department");
+                return false;
+            }
+        }  
+        
+        try {
+        Integer.parseInt(txtHospId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Hospital Id");
+            
+        }
+        
+        if (txtHospId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital ID");
+            return false;
+        } else {
+            if (txtHospId.getText().length()> 1) {
+                JOptionPane.showMessageDialog(this, "Hospital ID should be only 1 digit");
+                return false;
+            }
+        }
+        
+        if (txtHospName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital Name");
+            return false;
+        } else {
+            if (!(txtHospName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Hospital Name");
+                return false;
+            }
+        }
+        return true;
+    }
 }
