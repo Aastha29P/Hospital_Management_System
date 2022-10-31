@@ -11,6 +11,7 @@ public class Hospital {
   public String hospName;
   public String community;
   public String city;
+  private String docName; 
 
     public int getHospId() {
         return hospId;
@@ -47,6 +48,14 @@ public class Hospital {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getDocName() {
+        return docName;
+    }
+
+    public void setDocName(String docName) {
+        this.docName = docName;
     }
   
   

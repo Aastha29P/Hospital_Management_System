@@ -34,14 +34,21 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         lbCity = new javax.swing.JLabel();
         txtCity = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
+        lbCity1 = new javax.swing.JLabel();
+        txtDocName = new javax.swing.JTextField();
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        setBackground(new java.awt.Color(0, 0, 0));
+
+        lbTitle.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        lbTitle.setForeground(new java.awt.Color(0, 204, 255));
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Hospital");
+        lbTitle.setText("Hospital Form");
 
+        lbHosptId.setForeground(new java.awt.Color(255, 255, 255));
         lbHosptId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHosptId.setText(" Id");
 
+        lbHospName.setForeground(new java.awt.Color(255, 255, 255));
         lbHospName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHospName.setText("Hospital Name");
 
@@ -51,6 +58,7 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbComm.setForeground(new java.awt.Color(255, 255, 255));
         lbComm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbComm.setText("Community");
 
@@ -60,6 +68,7 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbCity.setForeground(new java.awt.Color(255, 255, 255));
         lbCity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbCity.setText("City");
 
@@ -69,10 +78,21 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnAdd.setBackground(new java.awt.Color(204, 204, 204));
         btnAdd.setText("Add Hospital");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
+            }
+        });
+
+        lbCity1.setForeground(new java.awt.Color(255, 255, 255));
+        lbCity1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbCity1.setText("Doctor name");
+
+        txtDocName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDocNameActionPerformed(evt);
             }
         });
 
@@ -81,27 +101,31 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(lbTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
-                .addGap(33, 33, 33))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbHosptId, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbHospName, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbComm, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbCity, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtHospId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(txtHospName)
-                    .addComponent(txtComm)
-                    .addComponent(txtCity))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lbTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lbCity1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lbHosptId, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(lbHospName, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(lbComm, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(lbCity, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE))
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtHospId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(txtHospName)
+                            .addComponent(txtComm)
+                            .addComponent(txtCity)
+                            .addComponent(txtDocName))
+                        .addGap(0, 206, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(99, 99, 99))
+                .addGap(238, 238, 238))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,18 +148,25 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbCity, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDocName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lbCity1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
                 .addComponent(btnAdd)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
+        boolean isValid = Validation();
+        if (isValid) {
         int hospId = Integer.parseInt(txtHospId.getText());
         String hospName = txtHospName.getText();
         String community = txtComm.getText();
         String city = txtCity.getText();
+        String doc = txtDocName.getText();
        
 
         Hospital h = hospHistory.addNewHosp();
@@ -144,6 +175,7 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         h.setHospName(hospName);
         h.setCommunity(community);
         h.setCity(city);
+        h.setDocName(doc);
         
 
         JOptionPane.showMessageDialog(this, "New Hospital is added.");
@@ -152,6 +184,8 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         txtHospName.setText("");
         txtComm.setText("");
         txtCity.setText("");
+        txtDocName.setText("");
+        }  
         
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -167,17 +201,75 @@ public class CreateHospitalJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCityActionPerformed
 
+    private void txtDocNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDocNameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JLabel lbCity;
+    private javax.swing.JLabel lbCity1;
     private javax.swing.JLabel lbComm;
     private javax.swing.JLabel lbHospName;
     private javax.swing.JLabel lbHosptId;
     private javax.swing.JLabel lbTitle;
     private javax.swing.JTextField txtCity;
     private javax.swing.JTextField txtComm;
+    private javax.swing.JTextField txtDocName;
     private javax.swing.JTextField txtHospId;
     private javax.swing.JTextField txtHospName;
     // End of variables declaration//GEN-END:variables
+private boolean Validation() {
+    if (txtHospId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital ID");
+            return false;
+        } else {
+            if (txtHospId.getText().length() != 1) {
+                JOptionPane.showMessageDialog(this, "Hospital ID should be only 1 digit");
+                return false;
+            }
+        }
+        
+        try {
+        Integer.parseInt(txtHospId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Hospital Id");
+            
+        }
+        
+        if (txtHospName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital Name");
+            return false;
+        } else {
+            if (!(txtHospName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Hospital Name");
+                return false;
+            }
+        }
+        
+        if (txtComm.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Community");
+            return false;
+        }
+            else{
+            if(!(txtComm.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid Community");
+                return false;
+            }
+        } 
+        
+        if (txtCity.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient City");
+            return false;
+        }
+            else{
+            if(!(txtCity.getText().matches("[a-zA-Z]*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid City");
+                return false;
+            }
+        } 
+        return true;
+        
+    }   
 }

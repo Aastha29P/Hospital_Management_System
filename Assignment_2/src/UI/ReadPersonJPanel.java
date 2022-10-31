@@ -9,19 +9,15 @@ import javax.swing.table.DefaultTableModel;
 import system.Person;
 import system.personDirectory;
 
-/**
- *
- * @author parth
- */
+
 public class ReadPersonJPanel extends javax.swing.JPanel {
 
     Person person;
     personDirectory personHistory;
-    public ReadPersonJPanel(personDirectory personHistory) {
+    public ReadPersonJPanel(personDirectory personHistory, Person person) {
         initComponents();
         this.personHistory= personHistory;
-        person = new Person();
-        
+        this.person = person;        
         populateTable();
     }
 
@@ -53,13 +49,19 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
 
-        lbPerTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbPerTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbPerTitle.setText("Person");
+        setBackground(new java.awt.Color(0, 0, 0));
+        setForeground(new java.awt.Color(255, 255, 255));
 
+        lbPerTitle.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        lbPerTitle.setForeground(new java.awt.Color(0, 204, 255));
+        lbPerTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbPerTitle.setText("View Persons");
+
+        lbPerComm.setForeground(new java.awt.Color(255, 255, 255));
         lbPerComm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPerComm.setText("Community");
 
+        lbPerId.setForeground(new java.awt.Color(255, 255, 255));
         lbPerId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPerId.setText(" Id");
 
@@ -69,6 +71,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbPerName.setForeground(new java.awt.Color(255, 255, 255));
         lbPerName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPerName.setText("Name");
 
@@ -78,6 +81,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbPerAge.setForeground(new java.awt.Color(255, 255, 255));
         lbPerAge.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPerAge.setText("Age");
 
@@ -87,6 +91,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbPerGen.setForeground(new java.awt.Color(255, 255, 255));
         lbPerGen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPerGen.setText("Gender");
 
@@ -96,6 +101,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbPerHouse.setForeground(new java.awt.Color(255, 255, 255));
         lbPerHouse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPerHouse.setText("House");
 
@@ -105,6 +111,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        pTable.setBackground(java.awt.SystemColor.controlHighlight);
         pTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -118,6 +125,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(pTable);
 
+        btnView.setBackground(new java.awt.Color(204, 204, 204));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -125,6 +133,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(204, 204, 204));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +141,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDelete.setBackground(new java.awt.Color(204, 204, 204));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,7 +206,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
                     .addComponent(btnView)
                     .addComponent(btnUpdate)
                     .addComponent(btnDelete))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbPerId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -270,6 +280,8 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        boolean isValid = Validation();
+        if (isValid) {
         int selectedRowIndex = pTable.getSelectedRow();
         if (selectedRowIndex < 0) {
             JOptionPane.showMessageDialog(this, "Please select a row to update");
@@ -303,6 +315,7 @@ public class ReadPersonJPanel extends javax.swing.JPanel {
         txtPerGen.setText("");
         txtPerHouse.setText("");
         txtPerComm.setText("");
+        }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -351,16 +364,92 @@ private void populateTable() {
 
             for(Person e: personHistory.getPersonHistory()){
 
-                Object[] row = new Object[8];
+                Object[] row = new Object[7];
                 row[0] = e;
-                row[1] = e.getPerId();
-                row[2] = e.getName();
-                row[3] = e.getAge();
-                row[4] = e.getGender();
-                row[5] = e.getHouse();
-                row[6] = e.getCommunity();
+                row[1] = e.getName();
+                row[2] = e.getAge();
+                row[3] = e.getGender();
+                row[4] = e.getHouse();
+                row[5] = e.getCommunity();
 
                 model.addRow(row);
             }
         }
+
+        private boolean Validation() {
+        
+        if (txtPerId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Person ID");
+            return false;
+        } else {
+            if (txtPerId.getText().length() != 2) {
+                JOptionPane.showMessageDialog(this, "Person ID should be only 2 digits");
+                return false;
+            }
+        }
+        
+        try {
+        Integer.parseInt(txtPerId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Id");
+            
+        }
+        
+        
+        if (txtPerName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Person Name");
+            return false;
+        } else {
+            if (!(txtPerName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Person Name");
+                return false;
+            }
+        }
+        
+        try {
+        Integer.parseInt(txtPerAge.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Age");
+            
+        }
+        
+        if (txtPerAge.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Person Age");
+            return false;
+        }
+        
+        if (txtPerGen.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Person Gender");
+            return false;
+        }
+            else{
+            if(!(txtPerGen.getText().matches("[a-zA-Z]*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid gender");
+                return false;
+            }
+        } 
+        
+        if (txtPerHouse.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Person House");
+            return false;
+        }
+            else{
+            if(!(txtPerHouse.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid House");
+                return false;
+            }
+        } 
+        
+        if (txtPerComm.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Person Community");
+            return false;
+        }
+            else{
+            if(!(txtPerComm.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid Community");
+                return false;
+            }
+        } 
+        return true;
+    }
 }

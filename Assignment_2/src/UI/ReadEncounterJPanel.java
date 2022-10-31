@@ -34,10 +34,14 @@ public class ReadEncounterJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         ETable = new javax.swing.JTable();
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        setBackground(new java.awt.Color(0, 0, 0));
+
+        lbTitle.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        lbTitle.setForeground(new java.awt.Color(0, 204, 255));
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTitle.setText("View Encounter Report");
 
+        ETable.setBackground(java.awt.SystemColor.controlHighlight);
         ETable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null, null, null},
@@ -46,7 +50,7 @@ public class ReadEncounterJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Report Id", "Doctor Id", "Doctor Name", "Patient Id", "Patient Name", "Hospital Id", "Hospital Name", "Date", "Body Temperature", "Pulse Rate", "Respiration Rate", "BP"
+                "Patient Id", "Report Id", "Doctor Id", "Doctor Name", "Patient Name", "Hospital Id", "Hospital Name", "Date", "Body Temperature", "Pulse Rate", "Respiration Rate", "BP"
             }
         ));
         jScrollPane1.setViewportView(ETable);
@@ -68,7 +72,7 @@ public class ReadEncounterJPanel extends javax.swing.JPanel {
                 .addComponent(lbTitle)
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -84,24 +88,25 @@ private void populateTable() {
 
             for(Encounter1 e: encHistory.getEncounterHistory()){
 
-                Object[] row = new Object[13];
+                Object[] row = new Object[12];
                 row[0] = e;
                 row[1] = e.getRepId();
                 row[2] = e.getDocId();
                 row[3] = e.getDocName();
-                row[4] = e.getPatId();
-                row[5] = e.getPatName();
-                row[6] = e.getHospId();
-                row[7] = e.getHospName();
-                row[8] = e.getDate();
+                row[4] = e.getPatName();
+                row[5] = e.getHospId();
+                row[6] = e.getHospName();
+                row[7] = e.getDate();
             
             for(vitalSigns v: vsHistory.getVsHistory()){
-                row[9] = v.getBodyTemp();
-                row[10] = v.getPulseRate();
-                row[11] = v.getRespRate();
-                row[12] = v.getbP();
+                row[8] = v.getBodyTemp();
+                row[9] = v.getPulseRate();
+                row[10] = v.getRespRate();
+                row[11] = v.getbP();
             } 
             model.addRow(row);
             }
     }
+
+    
 }

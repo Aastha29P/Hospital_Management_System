@@ -42,6 +42,10 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
         btnView = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 0, 0));
+        setForeground(new java.awt.Color(0, 204, 255));
+
+        HTable.setBackground(java.awt.SystemColor.controlHighlight);
         HTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -55,13 +59,16 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(HTable);
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbTitle.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        lbTitle.setForeground(new java.awt.Color(0, 204, 255));
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTitle.setText("View Hospitals");
 
+        lbHosptId.setForeground(new java.awt.Color(255, 255, 255));
         lbHosptId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHosptId.setText(" Id");
 
+        lbHospName.setForeground(new java.awt.Color(255, 255, 255));
         lbHospName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHospName.setText("Hospital Name");
 
@@ -71,6 +78,7 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbComm.setForeground(new java.awt.Color(255, 255, 255));
         lbComm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbComm.setText("Community");
 
@@ -80,6 +88,7 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbCity.setForeground(new java.awt.Color(255, 255, 255));
         lbCity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbCity.setText("City");
 
@@ -89,6 +98,7 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(204, 204, 204));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +106,7 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnView.setBackground(new java.awt.Color(204, 204, 204));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +114,7 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDelete.setBackground(new java.awt.Color(204, 204, 204));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +167,7 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
                 .addComponent(lbTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbHosptId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,7 +191,7 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
                         .addComponent(btnUpdate)
                         .addComponent(btnDelete)
                         .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(140, Short.MAX_VALUE)))
+                    .addContainerGap(292, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -197,7 +209,8 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
-        
+            boolean isValid = Validation();
+            if (isValid) {
             int selectedRowIndex = HTable.getSelectedRow();
             if (selectedRowIndex < 0) {
                 JOptionPane.showMessageDialog(this, "Please select a row to update");
@@ -224,6 +237,7 @@ public class ReadHospitalJPanel extends javax.swing.JPanel {
         txtHospName.setText("");
         txtComm.setText("");
         txtCity.setText("");
+        }
         
     }//GEN-LAST:event_btnUpdateActionPerformed
 
@@ -287,14 +301,66 @@ private void populateTable() {
 
             for(Hospital e: hospHistory.getHospitalHistory()){
 
-                Object[] row = new Object[11];
+                Object[] row = new Object[5];
                 row[0] = e;
-                row[1] = e.getHospId();
-                row[2] = e.getHospName();
-                row[3] = e.getCommunity();
-                row[4] = e.getCity();
+                row[1] = e.getHospName();
+                row[2] = e.getCommunity();
+                row[3] = e.getCity();
                 
                 model.addRow(row);
             }
         }
+
+        private boolean Validation() {
+    if (txtHospId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital ID");
+            return false;
+        } else {
+            if (txtHospId.getText().length() != 1) {
+                JOptionPane.showMessageDialog(this, "Hospital ID should be only 1 digit");
+                return false;
+            }
+        }
+        
+        try {
+        Integer.parseInt(txtHospId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Hospital Id");
+            
+        }
+        
+        if (txtHospName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital Name");
+            return false;
+        } else {
+            if (!(txtHospName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Hospital Name");
+                return false;
+            }
+        }
+        
+        if (txtComm.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Community");
+            return false;
+        }
+            else{
+            if(!(txtComm.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid Community");
+                return false;
+            }
+        } 
+        
+        if (txtCity.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient City");
+            return false;
+        }
+            else{
+            if(!(txtCity.getText().matches("[a-zA-Z]*"))){
+                JOptionPane.showMessageDialog(this, "Please enter valid City");
+                return false;
+            }
+        } 
+        return true;
+        
+    }   
 }

@@ -7,10 +7,7 @@ package UI;
 import system.encounterHistory;
 import system.vitalSHistory;
 
-/**
- *
- * @author parth
- */
+
 public class DoctorUser extends javax.swing.JPanel {
 
     encounterHistory encHistory;
@@ -37,6 +34,10 @@ public class DoctorUser extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         Title = new javax.swing.JLabel();
 
+        jPanel1.setBackground(new java.awt.Color(0, 204, 255));
+
+        btnCreateEncounter.setBackground(new java.awt.Color(204, 204, 204));
+        btnCreateEncounter.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnCreateEncounter.setText("Create Encounter");
         btnCreateEncounter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -44,6 +45,8 @@ public class DoctorUser extends javax.swing.JPanel {
             }
         });
 
+        btnEncounterHistory.setBackground(new java.awt.Color(204, 204, 204));
+        btnEncounterHistory.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnEncounterHistory.setText("Encounter History");
         btnEncounterHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,7 +77,10 @@ public class DoctorUser extends javax.swing.JPanel {
 
         jSplitPane1.setLeftComponent(jPanel1);
 
-        Title.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+
+        Title.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        Title.setForeground(new java.awt.Color(0, 204, 255));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText("Doctor Encounter Form");
 
@@ -83,9 +89,9 @@ public class DoctorUser extends javax.swing.JPanel {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(279, 279, 279)
-                .addComponent(Title)
-                .addContainerGap(266, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, 682, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

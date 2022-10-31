@@ -43,13 +43,19 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
         txtHospId = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbTitle.setText("Doctor ");
+        setBackground(new java.awt.Color(0, 0, 0));
 
+        lbTitle.setBackground(new java.awt.Color(0, 204, 255));
+        lbTitle.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        lbTitle.setForeground(new java.awt.Color(0, 204, 255));
+        lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbTitle.setText("Doctor Form");
+
+        lbDocId.setForeground(new java.awt.Color(255, 255, 255));
         lbDocId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocId.setText(" Id");
 
+        lbDocName.setForeground(new java.awt.Color(255, 255, 255));
         lbDocName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocName.setText("Name");
 
@@ -59,6 +65,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbDocGen.setForeground(new java.awt.Color(255, 255, 255));
         lbDocGen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocGen.setText("Gender");
 
@@ -68,6 +75,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbDocPhone.setForeground(new java.awt.Color(255, 255, 255));
         lbDocPhone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocPhone.setText("Phone");
 
@@ -77,6 +85,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbDocDep.setForeground(new java.awt.Color(255, 255, 255));
         lbDocDep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocDep.setText("Department");
 
@@ -86,6 +95,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbHospName.setForeground(new java.awt.Color(255, 255, 255));
         lbHospName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHospName.setText("Hospital Name");
 
@@ -95,6 +105,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbHospId.setForeground(new java.awt.Color(255, 255, 255));
         lbHospId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHospId.setText("Hospital Id");
 
@@ -104,6 +115,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnAdd.setBackground(new java.awt.Color(204, 204, 204));
         btnAdd.setText("Add Doctor");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,7 +129,7 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(lbTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
+                .addComponent(lbTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 525, Short.MAX_VALUE)
                 .addGap(33, 33, 33))
             .addGroup(layout.createSequentialGroup()
                 .addGap(126, 126, 126)
@@ -131,19 +143,17 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                     .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtDocId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                        .addComponent(txtDocName)
-                        .addComponent(txtDocGen)
-                        .addComponent(txtDocPhone)
-                        .addComponent(txtDocDep)
-                        .addComponent(txtHospId))
-                    .addComponent(txtHospName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtDocId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(txtDocName)
+                            .addComponent(txtDocGen)
+                            .addComponent(txtDocPhone)
+                            .addComponent(txtDocDep)
+                            .addComponent(txtHospId))
+                        .addComponent(txtHospName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(160, 160, 160))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,9 +189,9 @@ public class CreateDoctorJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addGap(46, 46, 46)
                 .addComponent(btnAdd)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -290,7 +300,7 @@ private boolean Validation() {
             return false;
         }
             else{
-            if(!(txtDocGen.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+            if(!(txtDocGen.getText().matches("[a-zA-Z]*"))){
                 JOptionPane.showMessageDialog(this, "Please enter valid gender");
                 return false;
             }

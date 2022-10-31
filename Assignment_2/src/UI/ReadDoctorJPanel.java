@@ -9,18 +9,14 @@ import javax.swing.table.DefaultTableModel;
 import system.Doctor;
 import system.doctorDirectory;
 
-/**
- *
- * @author parth
- */
 public class ReadDoctorJPanel extends javax.swing.JPanel {
 
     doctorDirectory docHistory;
     Doctor doctor;
-    public ReadDoctorJPanel(doctorDirectory docHistory) {
+    public ReadDoctorJPanel(doctorDirectory docHistory, Doctor doctor) {
         initComponents();
        this.docHistory = docHistory; 
-        doctor = new Doctor();
+       this.doctor = doctor; 
         populateTable();
     }
 
@@ -54,10 +50,14 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
         txtDocName = new javax.swing.JTextField();
         txtDocId = new javax.swing.JTextField();
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        setBackground(new java.awt.Color(0, 0, 0));
+
+        lbTitle.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        lbTitle.setForeground(new java.awt.Color(0, 204, 255));
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTitle.setText("View Doctors");
 
+        DTable.setBackground(java.awt.SystemColor.controlHighlight);
         DTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -72,6 +72,7 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(DTable);
 
+        btnView.setBackground(new java.awt.Color(204, 204, 204));
         btnView.setText("View");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,6 +80,7 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnDelete.setBackground(new java.awt.Color(204, 204, 204));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +88,7 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnUpdate.setBackground(new java.awt.Color(204, 204, 204));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,24 +96,31 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbDocId.setForeground(new java.awt.Color(255, 255, 255));
         lbDocId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocId.setText(" Id");
 
+        lbDocName.setForeground(new java.awt.Color(255, 255, 255));
         lbDocName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocName.setText("Name");
 
+        lbDocGen.setForeground(new java.awt.Color(255, 255, 255));
         lbDocGen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocGen.setText("Gender");
 
+        lbDocPhone.setForeground(new java.awt.Color(255, 255, 255));
         lbDocPhone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocPhone.setText("Phone");
 
+        lbDocDep.setForeground(new java.awt.Color(255, 255, 255));
         lbDocDep.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocDep.setText("Department");
 
+        lbHospName.setForeground(new java.awt.Color(255, 255, 255));
         lbHospName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHospName.setText("Hospital Name");
 
+        lbHospId.setForeground(new java.awt.Color(255, 255, 255));
         lbHospId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHospId.setText("Hospital Id");
 
@@ -171,7 +181,7 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
                                 .addComponent(btnDelete)
                                 .addGap(33, 33, 33)
                                 .addComponent(btnUpdate)))
-                        .addGap(0, 51, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,7 +252,7 @@ public class ReadDoctorJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 254, Short.MAX_VALUE))
+                .addGap(0, 249, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -382,16 +392,15 @@ private void populateTable() {
 
             for(Doctor d: docHistory.getDocHistory()){
 
-                Object[] row = new Object[9];
+                Object[] row = new Object[8];
                 row[0] = d;
-                row[1] = d.getDocId();
-                row[2] = d.getDocName();
+                row[1] = d.getDocName();
+                row[2] = d.getDocGen();
                 row[3] = d.getDocPhone();
-                row[4] = d.getDocGen();
-                row[5] = d.getDocDep();
-                row[6] = d.getHospId();
-                row[7] = d.getHospName();
-                
+                row[4] = d.getDocDep();
+                row[5] = d.getHospId();
+                row[6] = d.getHospName();
+                                
                 model.addRow(row);
             }
     }
@@ -438,7 +447,7 @@ private void populateTable() {
             return false;
         }
             else{
-            if(!(txtDocGen.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+            if(!(txtDocGen.getText().matches("[a-zA-Z]*"))){
                 JOptionPane.showMessageDialog(this, "Please enter valid gender");
                 return false;
             }

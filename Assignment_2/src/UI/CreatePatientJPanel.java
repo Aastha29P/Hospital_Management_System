@@ -4,18 +4,71 @@
  */
 package UI;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import javax.swing.JOptionPane;
+import system.Community;
+import system.CommunityHistory;
 import system.Patient;
 import system.patientDirectory;
 
 public class CreatePatientJPanel extends javax.swing.JPanel {
 
-    patientDirectory patientHistory;
+    private ArrayList<Community> cList = new ArrayList<>();
+
+    private HashSet<String> cityList = new HashSet<>();
+
+    private ArrayList<String> communityNameList = new ArrayList<>();
+
+    private ArrayList<String> houseList = new ArrayList<>();
     
-    public CreatePatientJPanel(patientDirectory patientHistory) {
+    patientDirectory newPatData;
+    private HashMap<String, ArrayList<String>> map = new HashMap<>();
+        
+    public CreatePatientJPanel(patientDirectory patientHistory, CommunityHistory comm) {
         initComponents();
-        this.patientHistory = patientHistory;
+        newPatData = patientHistory;
+        cList = comm.getCommunityDetails();
+        for (Community community : cList) {
+
+            cityList.add(community.getCity());
+            communityNameList.add(community.getCommunity());
+        }
+
+        CommCityTxt.addItem("Select a city");
+
+        for (String city : cityList) {
+            CommCityTxt.addItem(city);
+
+        }
+        setCommunityAllProperties();
     }
+    
+    private void setCommunityAllProperties() {
+
+        for (Community community : cList) {
+
+            ArrayList<String> communityVal = new ArrayList<>();
+
+            if (cityList.contains(community.getCity())) {
+                if (map.get(community.getCity()) == null) {
+                    communityVal.add(community.getCommunity());
+                    map.put(community.getCity(), communityVal);
+                } else {
+
+                    map.get(community.getCity()).add(community.getCommunity());
+
+                }
+
+            }
+
+        }
+
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,15 +102,23 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         txtHouse = new javax.swing.JTextField();
         btnAdd = new javax.swing.JButton();
         lbPatCommunity = new javax.swing.JLabel();
-        txtPatCommunity = new javax.swing.JTextField();
+        CommNameTxt = new javax.swing.JComboBox<>();
+        lbCity = new javax.swing.JLabel();
+        CommCityTxt = new javax.swing.JComboBox<>();
 
-        lbDocTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        setBackground(new java.awt.Color(0, 0, 0));
+        setForeground(new java.awt.Color(255, 255, 255));
+
+        lbDocTitle.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        lbDocTitle.setForeground(new java.awt.Color(0, 204, 255));
         lbDocTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocTitle.setText("Patient");
 
+        lbPatId.setForeground(new java.awt.Color(255, 255, 255));
         lbPatId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPatId.setText(" Id");
 
+        lbPatFName.setForeground(new java.awt.Color(255, 255, 255));
         lbPatFName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPatFName.setText("First Name");
 
@@ -67,6 +128,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbPatLName.setForeground(new java.awt.Color(255, 255, 255));
         lbPatLName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPatLName.setText("Last Name");
 
@@ -76,6 +138,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbPatPhone.setForeground(new java.awt.Color(255, 255, 255));
         lbPatPhone.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPatPhone.setText("Phone");
 
@@ -85,6 +148,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbAge.setForeground(new java.awt.Color(255, 255, 255));
         lbAge.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbAge.setText("Age");
 
@@ -94,6 +158,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbPatGen.setForeground(new java.awt.Color(255, 255, 255));
         lbPatGen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPatGen.setText("Gender");
 
@@ -103,6 +168,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbDob.setForeground(new java.awt.Color(255, 255, 255));
         lbDob.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDob.setText("Date of Birth");
 
@@ -112,6 +178,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbHeight.setForeground(new java.awt.Color(255, 255, 255));
         lbHeight.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHeight.setText("Height");
 
@@ -121,6 +188,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbWeight.setForeground(new java.awt.Color(255, 255, 255));
         lbWeight.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbWeight.setText("Weight");
 
@@ -130,6 +198,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbHouse.setForeground(new java.awt.Color(255, 255, 255));
         lbHouse.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHouse.setText("House");
 
@@ -139,6 +208,7 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnAdd.setBackground(new java.awt.Color(204, 204, 204));
         btnAdd.setText("Add Patient");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,12 +216,23 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbPatCommunity.setForeground(new java.awt.Color(255, 255, 255));
         lbPatCommunity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPatCommunity.setText("Community");
 
-        txtPatCommunity.addActionListener(new java.awt.event.ActionListener() {
+        CommNameTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPatCommunityActionPerformed(evt);
+                CommNameTxtActionPerformed(evt);
+            }
+        });
+
+        lbCity.setForeground(new java.awt.Color(255, 255, 255));
+        lbCity.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbCity.setText("City");
+
+        CommCityTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CommCityTxtActionPerformed(evt);
             }
         });
 
@@ -161,95 +242,104 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(lbDocTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                .addComponent(lbDocTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 509, Short.MAX_VALUE)
                 .addGap(33, 33, 33))
             .addGroup(layout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lbHouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbWeight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbHeight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbPatGen, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbPatId, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbPatFName, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbPatLName, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbPatPhone, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbDob, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(lbAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbPatCommunity, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtPatId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                    .addComponent(txtPatFName)
-                    .addComponent(txtPatLName)
-                    .addComponent(txtPatPhone)
-                    .addComponent(txtAge)
-                    .addComponent(txtPatGen)
-                    .addComponent(txtDob)
-                    .addComponent(txtHeight)
-                    .addComponent(txtWeight)
-                    .addComponent(txtHouse)
-                    .addComponent(txtPatCommunity))
+                .addGap(135, 135, 135)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lbHouse, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbWeight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbHeight, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbPatGen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbPatId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbPatFName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbPatLName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbPatPhone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbDob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbPatCommunity, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lbCity, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(91, 91, 91)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtPatId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                        .addComponent(txtPatFName)
+                        .addComponent(txtPatLName)
+                        .addComponent(txtPatPhone)
+                        .addComponent(txtAge)
+                        .addComponent(txtPatGen)
+                        .addComponent(txtDob)
+                        .addComponent(txtHeight)
+                        .addComponent(txtWeight)
+                        .addComponent(txtHouse))
+                    .addComponent(CommCityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CommNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(171, 171, 171))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lbDocTitle)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPatId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbPatId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPatFName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbPatFName, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPatLName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbPatLName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPatPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbPatPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbAge, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lbCity, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbPatGen, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lbPatCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbDocTitle)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPatId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbPatId, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPatGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbDob, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtHeight)
-                    .addComponent(lbHeight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtWeight))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtHouse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbPatCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPatCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPatFName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbPatFName, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPatLName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbPatLName, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPatPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbPatPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbAge, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbPatGen, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtPatGen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbDob, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtHeight)
+                            .addComponent(lbHeight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbWeight, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtWeight))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtHouse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CommCityTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CommNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)))
                 .addComponent(btnAdd)
-                .addGap(60, 60, 60))
+                .addGap(43, 43, 43))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -283,9 +373,10 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         int height = Integer.parseInt(txtHeight.getText());
         int weight = Integer.parseInt(txtWeight.getText());
         String house = txtHouse.getText();
-        String pcommunity = txtPatCommunity.getText();
+        String community = CommNameTxt.getSelectedItem().toString();
+        String city = CommCityTxt.getSelectedItem().toString();
         
-        Patient p = patientHistory.addNewPat();
+        Patient p = newPatData.addNewPat();
 
         p.setPatId(patId);
         p.setFirstName(firstName);
@@ -297,7 +388,8 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         p.setHeight(height);
         p.setWeight(weight);
         p.setHouse(house);
-        p.setPCommunity(pcommunity);
+        p.setCommunity(community);
+        p.setCity(city);
 
         JOptionPane.showMessageDialog(this, "New Patient is added.");
 
@@ -311,7 +403,8 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         txtHeight.setText("");
         txtWeight.setText("");
         txtHouse.setText("");
-        txtPatCommunity.setText("");
+        CommNameTxt.setSelectedItem("");
+        CommCityTxt.setSelectedItem("");
     }
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -335,14 +428,38 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtHouseActionPerformed
 
-    private void txtPatCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatCommunityActionPerformed
+    private void CommNameTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommNameTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPatCommunityActionPerformed
+    }//GEN-LAST:event_CommNameTxtActionPerformed
+
+    private void CommCityTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommCityTxtActionPerformed
+        // TODO add your handling code here:
+        for (Map.Entry<String, ArrayList<String>> entry : map.entrySet()) {
+
+            if (CommCityTxt.getSelectedItem() != null) {
+
+                if (CommCityTxt.getSelectedItem().equals(entry.getKey())) {
+                    ArrayList<String> list = entry.getValue();
+                    //HospCityCombobox.removeAllItems();
+                    CommNameTxt.removeAllItems();
+                    for (String community : list) {
+                        CommNameTxt.addItem(community);
+                    }
+
+                }
+
+            }
+
+        }
+    }//GEN-LAST:event_CommCityTxtActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CommCityTxt;
+    private javax.swing.JComboBox<String> CommNameTxt;
     private javax.swing.JButton btnAdd;
     private javax.swing.JLabel lbAge;
+    private javax.swing.JLabel lbCity;
     private javax.swing.JLabel lbDob;
     private javax.swing.JLabel lbDocTitle;
     private javax.swing.JLabel lbHeight;
@@ -358,7 +475,6 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtDob;
     private javax.swing.JTextField txtHeight;
     private javax.swing.JTextField txtHouse;
-    private javax.swing.JTextField txtPatCommunity;
     private javax.swing.JTextField txtPatFName;
     private javax.swing.JTextField txtPatGen;
     private javax.swing.JTextField txtPatId;
@@ -367,6 +483,17 @@ public class CreatePatientJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtWeight;
     // End of variables declaration//GEN-END:variables
 private boolean Validation() {
+        
+        if (txtPatId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient ID");
+            return false;
+        } else {
+            if (txtPatId.getText().length() != 4) {
+                JOptionPane.showMessageDialog(this, "Patient ID should be only 4 digits");
+                return false;
+            }
+        }
+        
         try {
         Integer.parseInt(txtPatId.getText());
         } catch (NumberFormatException e) {
@@ -374,11 +501,12 @@ private boolean Validation() {
             
         }
         
+        
         if (txtPatFName.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter Patient First Name");
             return false;
         } else {
-            if (!(txtPatFName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+            if (!(txtPatFName.getText().matches("[a-zA-Z]*"))) {
                 JOptionPane.showMessageDialog(this, "Please enter Valid Patient First Name");
                 return false;
             }
@@ -388,7 +516,7 @@ private boolean Validation() {
             JOptionPane.showMessageDialog(this, "Please enter Patient Last Name");
             return false;
         } else {
-            if (!(txtPatLName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+            if (!(txtPatLName.getText().matches("[a-zA-Z]*"))) {
                 JOptionPane.showMessageDialog(this, "Please enter Valid Patient Last Name");
                 return false;
             }
@@ -422,7 +550,7 @@ private boolean Validation() {
             return false;
         }
             else{
-            if(!(txtPatGen.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
+            if(!(txtPatGen.getText().matches("[a-zA-Z]*"))){
                 JOptionPane.showMessageDialog(this, "Please enter valid gender");
                 return false;
             }
@@ -472,16 +600,7 @@ private boolean Validation() {
             }
         } 
         
-        if (txtPatCommunity.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please enter Patient Community");
-            return false;
-        }
-            else{
-            if(!(txtPatCommunity.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))){
-                JOptionPane.showMessageDialog(this, "Please enter valid Community");
-                return false;
-            }
-        } 
+        
         
        
         return true;

@@ -58,12 +58,17 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
         lbBp = new javax.swing.JLabel();
         lbTitle = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(0, 0, 0));
+
+        lbRepId.setForeground(new java.awt.Color(255, 255, 255));
         lbRepId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbRepId.setText("Report Id");
 
+        lbDocId.setForeground(new java.awt.Color(255, 255, 255));
         lbDocId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocId.setText("Doctor Id");
 
+        btnSave.setBackground(new java.awt.Color(204, 204, 204));
         btnSave.setText("Save ");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,6 +76,7 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbDocId1.setForeground(new java.awt.Color(255, 255, 255));
         lbDocId1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDocId1.setText("Doctor Name");
 
@@ -86,9 +92,11 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
             }
         });
 
+        PatName.setForeground(new java.awt.Color(255, 255, 255));
         PatName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PatName.setText("Patient Name");
 
+        lbDate.setForeground(new java.awt.Color(255, 255, 255));
         lbDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbDate.setText("Date");
 
@@ -98,9 +106,11 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbHospId1.setForeground(new java.awt.Color(255, 255, 255));
         lbHospId1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHospId1.setText("Hospital Name");
 
+        lbBodytemp.setForeground(new java.awt.Color(255, 255, 255));
         lbBodytemp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbBodytemp.setText("Body Temperature");
 
@@ -122,9 +132,11 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
             }
         });
 
+        PatId.setForeground(new java.awt.Color(255, 255, 255));
         PatId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PatId.setText("Patient Id");
 
+        lbPulserate.setForeground(new java.awt.Color(255, 255, 255));
         lbPulserate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbPulserate.setText("Pulse Rate");
 
@@ -140,9 +152,11 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
             }
         });
 
+        lbHospId.setForeground(new java.awt.Color(255, 255, 255));
         lbHospId.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbHospId.setText("Hospital Id");
 
+        lbResprate.setForeground(new java.awt.Color(255, 255, 255));
         lbResprate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbResprate.setText("Respiration Rate");
 
@@ -162,10 +176,12 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
         lbTitle1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTitle1.setText("Vital Signs Form");
 
+        lbBp.setForeground(new java.awt.Color(255, 255, 255));
         lbBp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbBp.setText("Blood Pressure");
 
-        lbTitle.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lbTitle.setFont(new java.awt.Font("Century", 1, 24)); // NOI18N
+        lbTitle.setForeground(new java.awt.Color(0, 204, 255));
         lbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbTitle.setText("Encounter Form");
 
@@ -196,27 +212,23 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
                                         .addComponent(txtRepId, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
                                         .addComponent(txtDocId)
                                         .addComponent(txtPatId))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbHospId1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lbHospId1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(16, 16, 16)
-                                    .addComponent(txtHospName, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lbDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(17, 17, 17)
+                                    .addComponent(txtDate))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lbHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(16, 16, 16)
-                                    .addComponent(txtHospId, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(PatName, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtPatName, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lbDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(6, 6, 6))
+                                    .addComponent(PatName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtPatName, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(148, 148, 148)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -233,8 +245,7 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(lbBp, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)
-                                .addComponent(txtBp, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(txtBp, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(176, 176, 176))
             .addGroup(layout.createSequentialGroup()
                 .addGap(215, 215, 215)
@@ -304,6 +315,8 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        boolean isValid = Validation();
+        if (isValid) {
         int reportId = Integer.parseInt(txtRepId.getText());
         int docId = Integer.parseInt(txtDocId.getText());
         String docName = txtDocName.getText();
@@ -348,7 +361,7 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
         txtPulserate.setText("");
         txtResprate.setText("");
         txtBp.setText("");
-
+        }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void txtDocNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocNameActionPerformed
@@ -421,4 +434,165 @@ public class CreateEncounterJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtRepId;
     private javax.swing.JTextField txtResprate;
     // End of variables declaration//GEN-END:variables
+private boolean Validation() {
+        
+        if (txtRepId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Report ID");
+            return false;
+        } else {
+            if (txtRepId.getText().length() != 5) {
+                JOptionPane.showMessageDialog(this, "Report ID should be only 5 digits");
+                return false;
+            }
+        }
+        try {
+        Integer.parseInt(txtRepId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Id");
+            
+        }
+        
+        try {
+        Integer.parseInt(txtDocId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Doctor Id");
+            
+        }
+        
+
+        if (txtDocId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor ID");
+            return false;
+        } else {
+            if (txtDocId.getText().length() != 3) {
+                JOptionPane.showMessageDialog(this, "Doctor ID should be only 3 digits");
+                return false;
+            }
+        }
+        
+        if (txtDocName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Doctor Name");
+            return false;
+        } else {
+            if (!(txtDocName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Doctor Name");
+                return false;
+            }
+        }
+        
+        if (txtPatId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient ID");
+            return false;
+        } else {
+            if (txtPatId.getText().length() != 4) {
+                JOptionPane.showMessageDialog(this, "Patient ID should be only 4 digits");
+                return false;
+            }
+        }
+        
+        try {
+        Integer.parseInt(txtPatId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Patient Id");
+            
+        }
+        
+        
+        if (txtPatName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Name");
+            return false;
+        } else {
+            if (!(txtPatName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Patient Name");
+                return false;
+            }
+        }
+        
+        if (txtHospId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital ID");
+            return false;
+        } else {
+            if (txtHospId.getText().length() != 1) {
+                JOptionPane.showMessageDialog(this, "Hospital ID should be only 1 digit");
+                return false;
+            }
+        }
+        
+        try {
+        Integer.parseInt(txtHospId.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Hospital Id");
+            
+        }
+        
+        if (txtHospName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Hospital Name");
+            return false;
+        } else {
+            if (!(txtHospName.getText().matches("[a-zA-Z]*[\\s]{1}[a-zA-Z].*"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Valid Hospital Name");
+                return false;
+            }
+        }
+        
+        if (txtDate.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Date");
+            return false;
+        } else {
+            if (!(txtDate.getText().matches("^(1[0-2]|0[1-9])/(3[01]|[12][0-9]|0[1-9])/[0-9]{4}$"))) {
+                JOptionPane.showMessageDialog(this, "Please enter Date Format mm/dd/yyyy");
+                return false;
+            }
+        }
+        
+        try {
+        Integer.parseInt(txtBodytemp.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Body Temperature");
+            
+        }
+        
+        if (txtBodytemp.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Body Temperature");
+            return false;
+        }
+                 
+        try {
+        Integer.parseInt(txtPulserate.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Pulse rate");
+            
+        }
+        
+        if (txtPulserate.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Pulse rate");
+            return false;
+        }   
+        
+        try {
+        Integer.parseInt(txtResprate.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for Respiration rate");
+            
+        }
+        
+        if (txtResprate.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient Respiration rate");
+            return false;
+        }
+        
+        try {
+        Integer.parseInt(txtBp.getText());
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Enter a numerical value for BP");
+            
+        }
+        
+        if (txtBp.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter Patient BP");
+            return false;
+        }
+              
+        return true;
+    } 
 }

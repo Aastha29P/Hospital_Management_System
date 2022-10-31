@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="0" green="0" red="0" type="rgb"/>
+    </Property>
+    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+    </Property>
+  </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -18,44 +26,46 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="lbDocTitle" pref="484" max="32767" attributes="0"/>
+              <Component id="lbDocTitle" pref="509" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="lbHouse" max="32767" attributes="0"/>
-                  <Component id="lbWeight" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lbHeight" alignment="1" max="32767" attributes="0"/>
-                  <Component id="lbPatGen" alignment="0" pref="108" max="32767" attributes="0"/>
-                  <Component id="lbPatId" alignment="0" pref="108" max="32767" attributes="0"/>
-                  <Component id="lbPatFName" alignment="0" pref="108" max="32767" attributes="0"/>
-                  <Component id="lbPatLName" alignment="0" pref="108" max="32767" attributes="0"/>
-                  <Component id="lbPatPhone" alignment="0" pref="108" max="32767" attributes="0"/>
-                  <Component id="lbDob" alignment="0" pref="108" max="32767" attributes="0"/>
-                  <Component id="lbAge" alignment="0" max="32767" attributes="0"/>
-                  <Component id="lbPatCommunity" alignment="1" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="lbHouse" max="32767" attributes="0"/>
+                      <Component id="lbWeight" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lbHeight" alignment="1" max="32767" attributes="0"/>
+                      <Component id="lbPatGen" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbPatId" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbPatFName" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbPatLName" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbPatPhone" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbDob" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbAge" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lbPatCommunity" alignment="1" min="-2" pref="108" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="lbCity" min="-2" pref="108" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtPatId" alignment="0" pref="156" max="32767" attributes="0"/>
-                  <Component id="txtPatFName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtPatLName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtPatPhone" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtAge" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtPatGen" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtDob" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtHeight" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtWeight" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtHouse" alignment="0" max="32767" attributes="0"/>
-                  <Component id="txtPatCommunity" alignment="0" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnAdd" alignment="0" min="-2" pref="108" max="-2" attributes="0"/>
+                      <Component id="txtPatId" alignment="0" pref="156" max="32767" attributes="0"/>
+                      <Component id="txtPatFName" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtPatLName" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtPatPhone" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtAge" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtPatGen" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtDob" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtHeight" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtWeight" alignment="0" max="32767" attributes="0"/>
+                      <Component id="txtHouse" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="CommCityTxt" min="-2" pref="156" max="-2" attributes="0"/>
+                  <Component id="CommNameTxt" min="-2" pref="156" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btnAdd" min="-2" pref="108" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -63,68 +73,78 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="lbDocTitle" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtPatId" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbPatId" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtPatFName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbPatFName" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtPatLName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbPatLName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtPatPhone" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbPatPhone" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="lbAge" min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="lbCity" min="-2" pref="24" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lbPatGen" min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="lbPatCommunity" min="-2" pref="24" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="txtAge" min="-2" max="-2" attributes="0"/>
+                      <Component id="lbDocTitle" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtPatId" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbPatId" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="txtPatGen" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtPatFName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbPatFName" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtPatLName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbPatLName" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="txtPatPhone" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lbPatPhone" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lbAge" min="-2" pref="22" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lbPatGen" min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="txtAge" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="txtPatGen" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbDob" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="txtDob" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtHeight" max="32767" attributes="0"/>
+                          <Component id="lbHeight" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbWeight" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="txtWeight" alignment="3" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lbHouse" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
+                          <Component id="txtHouse" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="CommCityTxt" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="CommNameTxt" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lbDob" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="txtDob" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="txtHeight" max="32767" attributes="0"/>
-                  <Component id="lbHeight" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbWeight" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="txtWeight" alignment="3" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lbHouse" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="txtHouse" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lbPatCommunity" min="-2" pref="24" max="-2" attributes="0"/>
-                  <Component id="txtPatCommunity" min="-2" pref="23" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -133,7 +153,10 @@
     <Component class="javax.swing.JLabel" name="lbDocTitle">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="18" style="0"/>
+          <Font name="Century" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="0" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Patient"/>
@@ -141,6 +164,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbPatId">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value=" Id"/>
       </Properties>
@@ -149,6 +175,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbPatFName">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="First Name"/>
       </Properties>
@@ -160,6 +189,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbPatLName">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Last Name"/>
       </Properties>
@@ -171,6 +203,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbPatPhone">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Phone"/>
       </Properties>
@@ -182,6 +217,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbAge">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Age"/>
       </Properties>
@@ -193,6 +231,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbPatGen">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Gender"/>
       </Properties>
@@ -204,6 +245,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbDob">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Date of Birth"/>
       </Properties>
@@ -215,6 +259,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbHeight">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Height"/>
       </Properties>
@@ -226,6 +273,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbWeight">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Weight"/>
       </Properties>
@@ -237,6 +287,9 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbHouse">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="House"/>
       </Properties>
@@ -248,6 +301,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAdd">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Add Patient"/>
       </Properties>
       <Events>
@@ -256,14 +312,47 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lbPatCommunity">
       <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Community"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtPatCommunity">
+    <Component class="javax.swing.JComboBox" name="CommNameTxt">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPatCommunityActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CommNameTxtActionPerformed"/>
       </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbCity">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="City"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="CommCityTxt">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CommCityTxtActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

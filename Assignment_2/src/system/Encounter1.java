@@ -25,7 +25,7 @@ public class Encounter1 {
     
     @Override
     public String toString() {
-            return String.valueOf(repId);
+            return String.valueOf(patId);
     }
 
     public void setRepId(int repId) {

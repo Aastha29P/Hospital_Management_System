@@ -16,7 +16,8 @@ public class Patient {
     public int height;
     public int weight;
     public String house;
-    public String pcommunity;
+    public String community;
+    public String city;
 
     public int getPatId() {
         return patId;
@@ -103,12 +104,21 @@ public class Patient {
         this.house = house;
     }
 
-    public String getPCommunity() {
-        return pcommunity;
+   
+    public String getCommunity() {
+        return community;
     }
 
-    public void setPCommunity(String community) {
-        this.pcommunity = community;
+    public void setCommunity(String community) {
+        this.community = community;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
     
     

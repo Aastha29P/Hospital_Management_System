@@ -4,6 +4,8 @@
  */
 package UI;
 
+import system.Community;
+import system.CommunityHistory;
 import system.Doctor;
 import system.Hospital;
 import system.Patient;
@@ -23,21 +25,27 @@ public class Admin_1 extends javax.swing.JPanel {
     Patient patient;
     Hospital hospital;
     Person person;
+    Community community; 
     doctorDirectory docHistory;
     patientDirectory patientHistory;
     hospitalDirectory hospHistory;
     personDirectory personHistory;
+    CommunityHistory CommunityDetails;
     
-    public Admin_1() {
+    public Admin_1(Doctor doctor, Patient patient, Hospital hospital, Person person, Community community, 
+                    doctorDirectory docHistory, patientDirectory patientHistory, hospitalDirectory hospHistory, 
+                    personDirectory personHistory, CommunityHistory CommunityDetails) {
         initComponents();
-        doctor = new Doctor();
-        patient = new Patient();
-        hospital = new Hospital();
-        person = new Person();
-        docHistory = new doctorDirectory(); 
-        patientHistory = new patientDirectory();
-        hospHistory = new hospitalDirectory();
-        personHistory = new personDirectory();
+        this.doctor = doctor;
+        this.patient = patient;
+        this.hospital = hospital;
+        this.person = person;
+        this.docHistory = docHistory; 
+        this.patientHistory = patientHistory;
+        this.hospHistory = hospHistory;
+        this.personHistory = personHistory;
+        this.CommunityDetails = CommunityDetails;
+        this.community = community;
     }
 
     /**
@@ -74,7 +82,16 @@ public class Admin_1 extends javax.swing.JPanel {
         btnAddPerson = new javax.swing.JButton();
         btnManagePerson = new javax.swing.JButton();
         jPanel14 = new javax.swing.JPanel();
+        CommunityPanel = new javax.swing.JPanel();
+        jSplitPane1 = new javax.swing.JSplitPane();
+        jPanel2 = new javax.swing.JPanel();
+        btnAddCommunity = new javax.swing.JButton();
+        btnManageCommunity = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
 
+        jPanel6.setBackground(new java.awt.Color(0, 204, 255));
+
+        btnAddDoc.setBackground(new java.awt.Color(204, 204, 204));
         btnAddDoc.setText("Add");
         btnAddDoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +99,7 @@ public class Admin_1 extends javax.swing.JPanel {
             }
         });
 
+        btnManageDoc.setBackground(new java.awt.Color(204, 204, 204));
         btnManageDoc.setText("Manage");
         btnManageDoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,6 +130,9 @@ public class Admin_1 extends javax.swing.JPanel {
 
         jSplitPane2.setLeftComponent(jPanel6);
 
+        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel7.setPreferredSize(new java.awt.Dimension(858, 600));
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -120,7 +141,7 @@ public class Admin_1 extends javax.swing.JPanel {
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 548, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
 
         jSplitPane2.setRightComponent(jPanel7);
@@ -133,13 +154,14 @@ public class Admin_1 extends javax.swing.JPanel {
         );
         DoctorPanelLayout.setVerticalGroup(
             DoctorPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DoctorPanelLayout.createSequentialGroup()
-                .addComponent(jSplitPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 207, Short.MAX_VALUE))
+            .addComponent(jSplitPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 650, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Doctor Admin", DoctorPanel);
 
+        jPanel8.setBackground(new java.awt.Color(0, 204, 255));
+
+        btnAddPat.setBackground(new java.awt.Color(204, 204, 204));
         btnAddPat.setText("Add");
         btnAddPat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +169,7 @@ public class Admin_1 extends javax.swing.JPanel {
             }
         });
 
+        btnManagePat.setBackground(new java.awt.Color(204, 204, 204));
         btnManagePat.setText("Manage");
         btnManagePat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,10 +195,12 @@ public class Admin_1 extends javax.swing.JPanel {
                 .addComponent(btnAddPat)
                 .addGap(44, 44, 44)
                 .addComponent(btnManagePat)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
 
         jSplitPane3.setLeftComponent(jPanel8);
+
+        jPanel9.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -185,7 +210,7 @@ public class Admin_1 extends javax.swing.JPanel {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 526, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
 
         jSplitPane3.setRightComponent(jPanel9);
@@ -198,13 +223,14 @@ public class Admin_1 extends javax.swing.JPanel {
         );
         PatientPanelLayout.setVerticalGroup(
             PatientPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PatientPanelLayout.createSequentialGroup()
-                .addComponent(jSplitPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 50, Short.MAX_VALUE))
+            .addComponent(jSplitPane3)
         );
 
         jTabbedPane1.addTab("Patient Admin", PatientPanel);
 
+        jPanel10.setBackground(new java.awt.Color(0, 204, 255));
+
+        btnAddHosp.setBackground(new java.awt.Color(204, 204, 204));
         btnAddHosp.setText("Add");
         btnAddHosp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -212,6 +238,7 @@ public class Admin_1 extends javax.swing.JPanel {
             }
         });
 
+        btnManageHosp.setBackground(new java.awt.Color(204, 204, 204));
         btnManageHosp.setText("Manage");
         btnManageHosp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,10 +264,12 @@ public class Admin_1 extends javax.swing.JPanel {
                 .addComponent(btnAddHosp)
                 .addGap(44, 44, 44)
                 .addComponent(btnManageHosp)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addContainerGap(405, Short.MAX_VALUE))
         );
 
         jSplitPane4.setLeftComponent(jPanel10);
+
+        jPanel11.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -250,7 +279,7 @@ public class Admin_1 extends javax.swing.JPanel {
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 506, Short.MAX_VALUE)
+            .addGap(0, 644, Short.MAX_VALUE)
         );
 
         jSplitPane4.setRightComponent(jPanel11);
@@ -265,12 +294,14 @@ public class Admin_1 extends javax.swing.JPanel {
             HospitalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HospitalPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSplitPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jSplitPane4))
         );
 
         jTabbedPane1.addTab("Hospital Admin", HospitalPanel);
 
+        jPanel13.setBackground(new java.awt.Color(0, 204, 255));
+
+        btnAddPerson.setBackground(new java.awt.Color(204, 204, 204));
         btnAddPerson.setText("Add");
         btnAddPerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,6 +309,7 @@ public class Admin_1 extends javax.swing.JPanel {
             }
         });
 
+        btnManagePerson.setBackground(new java.awt.Color(204, 204, 204));
         btnManagePerson.setText("Manage");
         btnManagePerson.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,10 +335,12 @@ public class Admin_1 extends javax.swing.JPanel {
                 .addComponent(btnAddPerson)
                 .addGap(44, 44, 44)
                 .addComponent(btnManagePerson)
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addContainerGap(411, Short.MAX_VALUE))
         );
 
         jSplitPane5.setLeftComponent(jPanel13);
+
+        jPanel14.setBackground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
@@ -316,7 +350,7 @@ public class Admin_1 extends javax.swing.JPanel {
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGap(0, 650, Short.MAX_VALUE)
         );
 
         jSplitPane5.setRightComponent(jPanel14);
@@ -331,12 +365,75 @@ public class Admin_1 extends javax.swing.JPanel {
         );
         PersonPanelLayout.setVerticalGroup(
             PersonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PersonPanelLayout.createSequentialGroup()
-                .addComponent(jSplitPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jSplitPane5)
         );
 
         jTabbedPane1.addTab("Person Admin", PersonPanel);
+
+        btnAddCommunity.setBackground(new java.awt.Color(204, 204, 204));
+        btnAddCommunity.setText("Add");
+        btnAddCommunity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCommunityActionPerformed(evt);
+            }
+        });
+
+        btnManageCommunity.setBackground(new java.awt.Color(204, 204, 204));
+        btnManageCommunity.setText("Manage");
+        btnManageCommunity.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnManageCommunityActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnManageCommunity)
+                    .addComponent(btnAddCommunity))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(btnAddCommunity)
+                .addGap(87, 87, 87)
+                .addComponent(btnManageCommunity)
+                .addContainerGap(407, Short.MAX_VALUE))
+        );
+
+        jSplitPane1.setLeftComponent(jPanel2);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 843, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 650, Short.MAX_VALUE)
+        );
+
+        jSplitPane1.setRightComponent(jPanel3);
+
+        javax.swing.GroupLayout CommunityPanelLayout = new javax.swing.GroupLayout(CommunityPanel);
+        CommunityPanel.setLayout(CommunityPanelLayout);
+        CommunityPanelLayout.setHorizontalGroup(
+            CommunityPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1)
+        );
+        CommunityPanelLayout.setVerticalGroup(
+            CommunityPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane1)
+        );
+
+        jTabbedPane1.addTab("Community Admin", CommunityPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -360,19 +457,19 @@ public class Admin_1 extends javax.swing.JPanel {
 
     private void btnManageDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageDocActionPerformed
         // TODO add your handling code here:
-        ReadDoctorJPanel readDoctorJPanel = new ReadDoctorJPanel(docHistory);
+        ReadDoctorJPanel readDoctorJPanel = new ReadDoctorJPanel(docHistory, doctor);
         jSplitPane2.setRightComponent(readDoctorJPanel);
     }//GEN-LAST:event_btnManageDocActionPerformed
 
     private void btnAddPatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddPatActionPerformed
         // TODO add your handling code here:
-        CreatePatientJPanel createPatientJPanel = new CreatePatientJPanel(patientHistory);
+        CreatePatientJPanel createPatientJPanel = new CreatePatientJPanel(patientHistory, CommunityDetails);
         jSplitPane3.setRightComponent(createPatientJPanel);
     }//GEN-LAST:event_btnAddPatActionPerformed
 
     private void btnManagePatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePatActionPerformed
         // TODO add your handling code here:
-        ReadPatientJPanel readPatientJPanel = new ReadPatientJPanel(patientHistory);
+        ReadPatientJPanel readPatientJPanel = new ReadPatientJPanel(patientHistory, patient, CommunityDetails);
         jSplitPane3.setRightComponent(readPatientJPanel);
     }//GEN-LAST:event_btnManagePatActionPerformed
 
@@ -396,20 +493,35 @@ public class Admin_1 extends javax.swing.JPanel {
 
     private void btnManagePersonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManagePersonActionPerformed
         // TODO add your handling code here:
-        ReadPersonJPanel readPersonJPanel = new ReadPersonJPanel(personHistory);
+        ReadPersonJPanel readPersonJPanel = new ReadPersonJPanel(personHistory, person);
         jSplitPane5.setRightComponent(readPersonJPanel);
     }//GEN-LAST:event_btnManagePersonActionPerformed
 
+    private void btnAddCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCommunityActionPerformed
+        // TODO add your handling code here:
+        CreateCommunityJPanel createCommunityJPanel = new CreateCommunityJPanel(CommunityDetails);
+        jSplitPane1.setRightComponent(createCommunityJPanel);
+    }//GEN-LAST:event_btnAddCommunityActionPerformed
+
+    private void btnManageCommunityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageCommunityActionPerformed
+        // TODO add your handling code here:
+        ReadCommunityJPanel readCommunityJPanel = new ReadCommunityJPanel(CommunityDetails);
+        jSplitPane1.setRightComponent(readCommunityJPanel);
+    }//GEN-LAST:event_btnManageCommunityActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel CommunityPanel;
     private javax.swing.JPanel DoctorPanel;
     private javax.swing.JPanel HospitalPanel;
     private javax.swing.JPanel PatientPanel;
     private javax.swing.JPanel PersonPanel;
+    private javax.swing.JButton btnAddCommunity;
     private javax.swing.JButton btnAddDoc;
     private javax.swing.JButton btnAddHosp;
     private javax.swing.JButton btnAddPat;
     private javax.swing.JButton btnAddPerson;
+    private javax.swing.JButton btnManageCommunity;
     private javax.swing.JButton btnManageDoc;
     private javax.swing.JButton btnManageHosp;
     private javax.swing.JButton btnManagePat;
@@ -418,10 +530,13 @@ public class Admin_1 extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JSplitPane jSplitPane2;
     private javax.swing.JSplitPane jSplitPane3;
     private javax.swing.JSplitPane jSplitPane4;
