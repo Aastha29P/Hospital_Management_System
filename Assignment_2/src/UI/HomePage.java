@@ -190,7 +190,7 @@ public class HomePage extends javax.swing.JFrame {
 
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
         // TODO add your handling code here:
-        PatientUser patientUserPanel = new PatientUser(encHistory, vsHistory, patientHistory, patient);
+        PatientUser patientUserPanel = new PatientUser(encHistory, vsHistory, patientHistory, patient, hospHistory);
         SplitPane.setRightComponent(patientUserPanel);
     }//GEN-LAST:event_btnPatientActionPerformed
 

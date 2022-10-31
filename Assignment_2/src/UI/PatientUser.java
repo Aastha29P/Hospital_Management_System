@@ -8,8 +8,10 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import system.Encounter1;
+import system.Hospital;
 import system.Patient;
 import system.encounterHistory;
+import system.hospitalDirectory;
 import system.patientDirectory;
 import system.vitalSHistory;
 import system.vitalSigns;
@@ -21,12 +23,14 @@ public class PatientUser extends javax.swing.JPanel {
     vitalSHistory vsHistory;
     Patient patient;
     patientDirectory patientHistory;
-    public PatientUser(encounterHistory encHistory, vitalSHistory vsHistory, patientDirectory patientHistory, Patient patient) {
+    hospitalDirectory hospHistory;
+    public PatientUser(encounterHistory encHistory, vitalSHistory vsHistory, patientDirectory patientHistory, Patient patient, hospitalDirectory hospHistory) {
         initComponents();
         this.encHistory = encHistory;
         this.vsHistory = vsHistory;
         this.patientHistory= patientHistory;
         this.patient = patient;
+        this.hospHistory = hospHistory;
     }
 
     /**
@@ -75,7 +79,8 @@ public class PatientUser extends javax.swing.JPanel {
         txtnearBy = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Tnb = new javax.swing.JTable();
+        btnSearchNB = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 0, 0));
 
@@ -258,7 +263,6 @@ public class PatientUser extends javax.swing.JPanel {
         Title2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title2.setText("Patient Details");
 
-        txtnearBy.setForeground(new java.awt.Color(255, 255, 255));
         txtnearBy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtnearByActionPerformed(evt);
@@ -268,7 +272,7 @@ public class PatientUser extends javax.swing.JPanel {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Near City");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Tnb.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -279,7 +283,14 @@ public class PatientUser extends javax.swing.JPanel {
                 "Doctor Name", "Hospital"
             }
         ));
-        jScrollPane3.setViewportView(jTable1);
+        jScrollPane3.setViewportView(Tnb);
+
+        btnSearchNB.setText("Search");
+        btnSearchNB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchNBActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -330,7 +341,9 @@ public class PatientUser extends javax.swing.JPanel {
                                         .addGap(118, 118, 118)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(41, 41, 41)
-                                        .addComponent(txtnearBy, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtnearBy, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnSearchNB))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(47, 47, 47)
                                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
@@ -389,7 +402,8 @@ public class PatientUser extends javax.swing.JPanel {
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtnearBy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))))
+                            .addComponent(jLabel2)
+                            .addComponent(btnSearchNB))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -671,6 +685,50 @@ public class PatientUser extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnearByActionPerformed
 
+    private void btnSearchNBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchNBActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel modelNearby = (DefaultTableModel) Tnb.getModel();
+
+        modelNearby.setRowCount(0);
+        boolean isPresent = false;
+
+//        ArrayList<Patient> pat = pHistory.getPatientData();
+          ArrayList<Hospital> hosp = hospHistory.getHospitalHistory();
+
+        //String cbSearchType = cbSearch.getSelectedItem().toString();
+        String txtValue = txtnearBy.getText();
+
+        if (txtValue.equals("")) {
+            JOptionPane.showMessageDialog(null, "Please Enter in the Search box");
+            return;
+        }
+
+        ArrayList<Hospital> hoData = new ArrayList<>();
+
+        for (Hospital hospDetails : hosp) {
+
+            if (txtValue.equals(hospDetails.getCity())) {
+                hoData.add(hospDetails);
+                isPresent = true;
+            }
+        }
+
+        for (Hospital ho : hoData) {
+            Object[] row = new Object[2];
+            row[0] = ho.getDocName();
+            row[1] = ho.getHospName();
+
+            modelNearby.addRow(row);
+
+        }
+
+        if (isPresent == false) {
+            JOptionPane.showMessageDialog(null, "No Records found");
+            //tbSearch.size();
+            return;
+        }
+    }//GEN-LAST:event_btnSearchNBActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ETable;
@@ -679,15 +737,16 @@ public class PatientUser extends javax.swing.JPanel {
     private javax.swing.JLabel Title;
     private javax.swing.JLabel Title1;
     private javax.swing.JLabel Title2;
+    private javax.swing.JTable Tnb;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnSearchNB;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel lbAge;
     private javax.swing.JLabel lbDob;
     private javax.swing.JLabel lbHeight;
